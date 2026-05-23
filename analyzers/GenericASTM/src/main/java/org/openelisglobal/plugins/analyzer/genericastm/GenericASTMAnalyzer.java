@@ -198,7 +198,12 @@ public class GenericASTMAnalyzer implements AnalyzerImporterPlugin {
     }
 
     String analyzerId = analyzer.getId();
-    String analyzerName = analyzer.getAnalyzerType().getName();
+    // P-003: use analyzer's own name (not the type name "Generic ASTM") so that
+    // AnalyzerTestNameCache lookups match clinlims.analyzer_test_map rows keyed by
+    // the specific instrument name.  Null-guard preserves type name as fallback.
+    String analyzerName = analyzer.getName() != null
+        ? analyzer.getName()
+        : (analyzer.getAnalyzerType() != null ? analyzer.getAnalyzerType().getName() : "UNKNOWN");
 
     LogEvent.logDebug(
         this.getClass().getSimpleName(),
