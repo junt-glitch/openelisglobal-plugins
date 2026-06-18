@@ -71,7 +71,7 @@
       <dependency>
         <groupId>org.openelisglobal</groupId>
         <artifactId>openelisglobal</artifactId>
-        <version>3.2.1.3</version>
+        <version>3.2.1.6</version>
         <type>test-jar</type>
         <scope>test</scope>
       </dependency>
@@ -109,7 +109,7 @@
     <dependency>
       <groupId>org.openelisglobal</groupId>
       <artifactId>openelisglobal</artifactId>
-      <version>3.2.1.3</version>
+      <version>3.2.1.6</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
